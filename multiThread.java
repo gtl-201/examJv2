@@ -24,23 +24,21 @@ class TaskEvenOdd implements Runnable {
 
     @Override
     public void run() {
-
-        //System.out.println("Run method");
         int number = isEvenNumber == false ? 0 : 1;
         while (number <= max) {
-
             if (isEvenNumber) {
-                //System.out.println("Even :"+ Thread.currentThread().getName());
-                print.printEven(number);
-                //number+=2;
+                if(number + 2 < 100 ){
+                    if(number >=3 ){
+                        number +=2;
+                    }
+                    print.printEven(number);
+                    number += 2;
+                }
             } else {
-                //System.out.println("Odd :"+ Thread.currentThread().getName());
                 print.printOdd(number);
-                // number+=2;
+                number += 2;
             }
-            number += 2;
         }
-
     }
 
 }
@@ -59,6 +57,7 @@ class Printer {
             }
         }
         System.out.println("--" + number);
+        System.out.println("--" + (number + 2));
         isOdd = false;
         notifyAll();
     }

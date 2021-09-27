@@ -18,20 +18,22 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
   	  
-      HashMap<String, String> hm = new HashMap<String, String>();
+      HashMap<String, String> hashMap = new HashMap<String, String>();
 
         String Name = null;
         String Phone;
-      while(true) {
-          
+        int CountTotalStudent = 0;
+      while(CountTotalStudent < 10) {
+        CountTotalStudent++;
         System.out.println("Student name: ");
         Name = sc.nextLine();
         if((Name.equals("x") == true) || (Name.equals("X") == true)) break;
         System.out.println("Student phone: ");
         Phone = sc.nextLine();
-        hm.put(Name, Phone);
+        hashMap.put(Name, Phone);
        }
-      Set<Entry<String, String>> set = hm.entrySet();
+
+      Set<Entry<String, String>> set = hashMap.entrySet();
       
       Iterator<Entry<String, String>> i = set.iterator();
       
